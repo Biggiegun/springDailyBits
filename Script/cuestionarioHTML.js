@@ -153,17 +153,25 @@ if (randomIndex === 0) {
   let seleccion = document.getElementsByClassName("desplazarCodigo");
 
   //let comprobar = document.querySelector("button");
-
+ 
   desplazar = (e) => {
-    const valor = e.target.id;
+    const valor = e.target;
     console.log(valor);
-    document.querySelector(".organizarElementos").append(seleccion[valor]);
+    let arregloRpta = new Array();
+
+    for (let i = 0; i < 4; i++) {
+      document.querySelector(".organizarElementos").append(valor); 
+      
+ 
+    }
+    
 
     //JSON.stringify(localStorage.setItem("Respuesta seleccion imagen", valor));
   };
 
   for (var i = 0; i < seleccion.length; i++) {
     seleccion[i].addEventListener("click", desplazar);
+    
   }
 } else if (randomIndex === 2) {
   // Seleccion imagen
