@@ -153,18 +153,24 @@ if (randomIndex === 0) {
   let seleccion = document.getElementsByClassName("desplazarCodigo");
 
   //let comprobar = document.querySelector("button");
- 
+
   desplazar = (e) => {
     const valor = e.target;
-    console.log(valor);
     let arregloRpta = new Array();
 
     for (let i = 0; i < 4; i++) {
       document.querySelector(".organizarElementos").append(valor); 
-      
- 
     }
     
+
+    //console.log(valor);
+    /*
+      seleccion[0].id;
+      seleccion[1].id;
+      seleccion[2].id;
+      seleccion[3].id;
+      seleccion[4].id;
+    */
 
     //JSON.stringify(localStorage.setItem("Respuesta seleccion imagen", valor));
   };

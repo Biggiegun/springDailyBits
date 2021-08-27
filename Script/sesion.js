@@ -16,12 +16,6 @@ const getData = async (url) => {
 });
 
 
-let cerrarSesion = document.getElementById("cerrarSesion");
-
-cerrarSesion.addEventListener("click", () => {
-    location.href = "loadPage.html";
-});
-
 
 
 
