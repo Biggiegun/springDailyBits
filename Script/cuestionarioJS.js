@@ -1,59 +1,59 @@
-//Code here - HTML
+// Code Here
 
-let preguntasHTML = [
-  [
-    {
-      pregunta:
-        "¿Qué etiqueta es semánticamente correcta para el contenido principal?",
-      correcta: "main",
-      opcion2: "section",
-      opcion3: "header",
-    },
-    {
-      pregunta:
-        "¿Qué etiqueta HTML nos sirve para incluir archivos de JavaScript?",
-      correcta: "script",
-      opcion2: "br",
-      opcion3: "styles",
-    },
-  ],
-  [
-    {
-      pregunta: "Organiza la estructura de un documento HTML5:",
-      elemento1: "<!DOCTYPE html>",
-      elemento2: "<html>",
-      elemento3: "<head></head>",
-      elemento4: "<body></body>",
-      elemento5: "</html>",
-    },
-    {
-      pregunta: "Ordena Jerárquicamente las siguientes etiquetas:",
-      elemento1: "<h1>",
-      elemento2: "<h2>",
-      elemento3: "<h3>",
-      elemento4: "<h4>",
-      elemento5: "<p>",
-    },
-  ],
-  [
-    {
-      pregunta: "¿Qué tecnologías pertenece al MEVN Stack?",
-      imagen1: "../images/Windows.png",
-      imagen2: "../images/Kotlin.png",
-      correcta: "../images/Vue.png",
-      imagen4: "../images/Angular.png",
-    },
-    {
-      pregunta:
-        "Sistema de base de datos NoSQL, orientado a documentos y de código abierto...",
-      imagen1: "../images/Linux.png",
-      correcta: "../images/Mongo.png",
-      imagen2: "../images/Nodejs.png",
-      imagen4: "../images/express.png",
-    },
-  ],
-];
+let preguntasJS = [
+    [
+      {
+        pregunta:
+          "Con qué etiqueta puedes aplicar estilos CSS a una página web?",
+        correcta: "Link",
+        opcion2: "script",
+        opcion3: "meta",
+      },
+      {
+        pregunta:
+          "¿Cuál de las siguientes no es una unidad de dimensionamiento en CSS?",
+        correcta: "mt",
+        opcion2: "px",
+        opcion3: "em",
+      },
+    ],
+    [
+      {
+        pregunta: "Ordena de menor a mayor segun 'Bootstrap':",
+        elemento1: "sm",
+        elemento2: "md",
+        elemento3: "lg",
+        elemento4: "xl",
+        elemento5: "xxl",
+      },
+      {
+        pregunta: "Ordena por superposición en pantalla: ",
+        elemento1: "z-index: 1",
+        elemento2: "z-index: 2",
+        elemento3: "z-index: 3",
+        elemento4: "z-index: 4",
+        elemento5: "z-index: 5",
+      },
+    ],
+    [
+      {
+        pregunta: "Cuál de los siguientes es un framework de CSS?",
+        imagen1: "../images/ReactJS.png",
+        imagen2: "../images/VB.png",
+        correcta: "../images/Foundation.png",
+        imagen4: "../images/C#.png",
+      },
+      {
+        pregunta: "Propiedad place-content: 'flex-start'",
+        imagen1: "../images/Center.png",
+        imagen2: "../images/Flex-end.png",
+        correcta: "../images/Flex-start.png",
+        imagen4: "../images/Stretch.png",
+      },
+    ],
+  ];
 
+  
 let randomImage = Math.floor(Math.random() * 4);
 let animaciones = new Array();
 animaciones[0] = "../images/boy1.svg";
@@ -70,7 +70,7 @@ if (randomIndex === 0) {
 
   // 3 respuestas 1 correcta
   const { pregunta, correcta, opcion2, opcion3 } =
-    preguntasHTML[randomIndex][randomQuestion];
+  preguntasJS[randomIndex][randomQuestion];
 
   let pintarDom = `
     <div id="pregunta">
@@ -116,13 +116,13 @@ if (randomIndex === 0) {
       if (respuesta == 1) {
         Swal.fire({text:'Correcto',
         icon:'success'
-        }).then(() => {localStorage.setItem("opcionesHTML-Correcta", 1); 
+        }).then(() => {localStorage.setItem("opcionesJS-Correcta", 1); 
         window.location.reload()})
         comprobar.classList.toggle("verdeCorrecto");
       } else {
         Swal.fire({text:'Incorrecto',
         icon:'error'
-        }).then(() => {localStorage.setItem("opcionesHTML-Incorrecta", 1);
+        }).then(() => {localStorage.setItem("opcionesJS-Incorrecta", 1);
         window.location.reload()})
         comprobar.classList.toggle("rojo");
       }
@@ -132,7 +132,7 @@ if (randomIndex === 0) {
 } else if (randomIndex === 1) {
   // Organizar codigo
   const { pregunta, elemento5, elemento4, elemento3, elemento2, elemento1 } =
-    preguntasHTML[randomIndex][randomQuestion];
+  preguntasJS[randomIndex][randomQuestion];
 
   let pintarDom = `
     <header id="pregunta1">${pregunta}</header>
@@ -178,13 +178,13 @@ if (randomIndex === 0) {
     if (arreglo2.length==arregloPrueba.length && arreglo2.every((v,i) => v === arregloPrueba[i])) {
       Swal.fire({text:'Correcto',
         icon:'success'
-        }).then(() => {localStorage.setItem("organizarHTML-Correcta", 1);
+        }).then(() => {localStorage.setItem("organizarJS-Correcta", 1);
           window.location.reload()})
       comprobar.classList.toggle("verdeCorrecto");      
     } else {
       Swal.fire({text:'Incorrecto',
         icon:'error'
-        }).then(() => {localStorage.setItem("organizarHTML-Incorrecta", 1);
+        }).then(() => {localStorage.setItem("organizarJS-Incorrecta", 1);
           window.location.reload()})
       comprobar.classList.toggle("rojo");
     }
@@ -192,7 +192,7 @@ if (randomIndex === 0) {
 } else if (randomIndex === 2) {
   // Seleccion imagen
   const { pregunta, imagen1, imagen2, correcta, imagen4 } =
-    preguntasHTML[randomIndex][randomQuestion];
+  preguntasJS[randomIndex][randomQuestion];
 
   let pintarDom = `
     <header>${pregunta}</header>
@@ -232,13 +232,13 @@ if (randomIndex === 0) {
       if (respuesta == 2) {
         Swal.fire({text:'Correcto',
         icon:'success'
-        }).then(() => {localStorage.setItem("imagenHTML-Correcta", 1); 
+        }).then(() => {localStorage.setItem("imagenJS-Correcta", 1); 
         window.location.reload()})
         comprobar.classList.toggle("verdeCorrecto");        
       } else {
         Swal.fire({text:'Incorrecto',
         icon:'error'
-        }).then(() => {localStorage.setItem("imagenHTML-Incorrecta", 1);
+        }).then(() => {localStorage.setItem("imagenJS-Incorrecta", 1);
           window.location.reload()});
         comprobar.classList.toggle("rojo");
       }
@@ -247,4 +247,3 @@ if (randomIndex === 0) {
 }
 
 //alert("Ha culminado el proceso. Debe empezar desde en cero en cualquiera de las categorías!.");
-
