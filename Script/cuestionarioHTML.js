@@ -1,5 +1,7 @@
 //Code here - HTML
 
+let vidas = 4;
+
 let preguntasHTML = [
   [
     {
@@ -67,6 +69,8 @@ console.log(preguntasHTML[randomIndex]);
 let randomQuestion = Math.floor(Math.random() * 2);
 console.log(preguntasHTML[randomIndex][randomQuestion]);
 
+
+
 if (randomIndex === 0) {
   // 3 respuestas 1 correcta
   const { pregunta, correcta, opcion2, opcion3 } =
@@ -100,12 +104,11 @@ if (randomIndex === 0) {
 
   let seleccion = document.getElementsByClassName("seleccionOpcion");
   let comprobar = document.querySelector("button");
-
+  let respuesta = "";
   seleccionRespuesta = (e) => {
     const valor1 = e.target.id;
     document.getElementById(valor1).classList.toggle("verde");
-    console.log(valor1);
-    JSON.stringify(localStorage.setItem("Respuesta opcion", valor1));
+    respuesta = valor1;
   };
   for (var i = 0; i < seleccion.length; i++) {
     seleccion[i].addEventListener("click", seleccionRespuesta);
@@ -114,15 +117,17 @@ if (randomIndex === 0) {
   comprobar.addEventListener(
     "click",
     (comprobarRespuesta = () => {
-      let respuestaUsuario = JSON.parse(
-        localStorage.getItem("Respuesta opcion")
-      );
-      if (respuestaUsuario == 1) {
+
+      if (respuesta == 1) {
         alert("correcto");
         comprobar.classList.toggle("verdeCorrecto");
+        localStorage.setItem("opcionesHTML-Correcta",1);
+        vidas = vidas;
       } else {
         alert("Incorrecto");
         comprobar.classList.toggle("rojo");
+        localStorage.setItem("opcionesHTML-Incorrecta",1);
+        vidas-= 1;
       }
     })
   );
@@ -150,35 +155,41 @@ if (randomIndex === 0) {
     `;
   document.body.innerHTML = pintarDom;
 
+  let comprobar = document.querySelector("button");
   let seleccion = document.getElementsByClassName("desplazarCodigo");
-
-  //let comprobar = document.querySelector("button");
-
-  desplazar = (e) => {
-    const valor = e.target;
-    let arregloRpta = new Array();
-
-    for (let i = 0; i < 4; i++) {
-      document.querySelector(".organizarElementos").append(valor); 
-    }
-    
-
-    //console.log(valor);
-    /*
-      seleccion[0].id;
-      seleccion[1].id;
-      seleccion[2].id;
-      seleccion[3].id;
-      seleccion[4].id;
-    */
-
-    //JSON.stringify(localStorage.setItem("Respuesta seleccion imagen", valor));
-  };
+  let arregloRpta = new Array();
+  let acumArray = new Array();
+  let arreglo2 = new Array();
 
   for (var i = 0; i < seleccion.length; i++) {
-    seleccion[i].addEventListener("click", desplazar);
-    
+    seleccion[i].addEventListener("click", desplazar = (e) =>{
+      const valor = e.target;
+       acumArray = arregloRpta.push(valor.id);
+       arregloRpta[i] += acumArray;
+
+       arreglo2 = arregloRpta.filter(element => element != null && !Number.isNaN(element));
+       //console.log(arreglo2);
+
+      for (let i = 0; i < 4; i++) {
+        document.querySelector(".organizarElementos").append(valor);   
+      }
+    });
   }
+
+  comprobar.addEventListener("click", comprobarRespuesta = () =>{    
+    const arregloPrueba = ["4", "3", "2", "1", "0"];
+    if (arreglo2.length==arregloPrueba.length && arreglo2.every((v,i) => v === arregloPrueba[i])) {
+      alert("correcto");
+      comprobar.classList.toggle("verdeCorrecto");
+      localStorage.setItem("organizarHTML-Correcta",1);
+      vidas = vidas;
+    } else {
+      alert("Incorrecto");
+      comprobar.classList.toggle("rojo");
+      localStorage.setItem("organizarHTML-Incorrecta",1);
+      vidas-= 1;
+    }
+  });
 } else if (randomIndex === 2) {
   // Seleccion imagen
   const { pregunta, imagen1, imagen2, correcta, imagen4 } =
@@ -206,12 +217,11 @@ if (randomIndex === 0) {
 
   let seleccion = document.getElementsByClassName("seleccionImagen");
   let comprobar = document.querySelector("button");
-
+  let respuesta = "";
   seleccionRespuesta = (e) => {
     const valor = e.target.id;
     document.getElementById(valor).classList.toggle("verde");
-    console.log(valor);
-    JSON.stringify(localStorage.setItem("Respuesta seleccion imagen", valor));
+    respuesta = valor;
   };
   for (var i = 0; i < seleccion.length; i++) {
     seleccion[i].addEventListener("click", seleccionRespuesta);
@@ -220,16 +230,21 @@ if (randomIndex === 0) {
   comprobar.addEventListener(
     "click",
     (comprobarRespuesta = () => {
-      let respuestaUsuario = JSON.parse(
-        localStorage.getItem("Respuesta seleccion imagen")
-      );
-      if (respuestaUsuario == 2) {
+      if (respuesta == 2) {
         alert("correcto");
         comprobar.classList.toggle("verdeCorrecto");
+        localStorage.setItem("imagenHTML-Correcta",1); 
+        vidas = vidas;
       } else {
         alert("Incorrecto");
         comprobar.classList.toggle("rojo");
+        localStorage.setItem("imagenHTML-Incorrecta",1);
+        vidas-= 1;
       }
     })
   );
 }
+
+
+//alert("Ha culminado el proceso. Debe empezar desde en cero en cualquiera de las categorías!.");
+
