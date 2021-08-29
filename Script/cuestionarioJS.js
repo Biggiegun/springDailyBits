@@ -4,51 +4,51 @@ let preguntasJS = [
     [
       {
         pregunta:
-          "Con qué etiqueta puedes aplicar estilos CSS a una página web?",
-        correcta: "Link",
-        opcion2: "script",
-        opcion3: "meta",
+        "¿Cuál de estos operadores se utiliza para concatenar cadenas de caracteres?",
+        correcta: "+",
+        opcion2: "%",
+        opcion3: "$",
       },
       {
         pregunta:
-          "¿Cuál de las siguientes no es una unidad de dimensionamiento en CSS?",
-        correcta: "mt",
-        opcion2: "px",
-        opcion3: "em",
+          "¿Cuando declaras variables en Javascript se utiliza la siguiente palabra reservada:?",
+        correcta: "var",
+        opcion2: "public",
+        opcion3: "store",
       },
     ],
     [
       {
-        pregunta: "Ordena de menor a mayor segun 'Bootstrap':",
-        elemento1: "sm",
-        elemento2: "md",
-        elemento3: "lg",
-        elemento4: "xl",
-        elemento5: "xxl",
+        pregunta: "Ordena de acuerdo con la declaración correcta de un ciclo for:",
+        elemento1: "for",
+        elemento2: "[expresion-inicial]",
+        elemento3: "[condicion]",
+        elemento4: "[expresion-final]",
+        elemento5: "sentencia",
       },
       {
-        pregunta: "Ordena por superposición en pantalla: ",
-        elemento1: "z-index: 1",
-        elemento2: "z-index: 2",
-        elemento3: "z-index: 3",
-        elemento4: "z-index: 4",
-        elemento5: "z-index: 5",
+        pregunta: "Ordena de acuerdo con la declaración correcta del método forEach:",
+        elemento1: "arr.forEach",
+        elemento2: "function callback",
+        elemento3: "currentValue",
+        elemento4: "index",
+        elemento5: "//tu iterador",
       },
     ],
     [
       {
-        pregunta: "Cuál de los siguientes es un framework de CSS?",
-        imagen1: "../images/ReactJS.png",
-        imagen2: "../images/VB.png",
-        correcta: "../images/Foundation.png",
-        imagen4: "../images/C#.png",
+        pregunta: "React es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario",
+        imagen1: "../images/Photoshop.svg",
+        imagen2: "../images/netframework.svg",
+        correcta: "../images/ReactJS.png",
+        imagen4: "../images/netbeans.png",
       },
       {
-        pregunta: "Propiedad place-content: 'flex-start'",
-        imagen1: "../images/Center.png",
-        imagen2: "../images/Flex-end.png",
-        correcta: "../images/Flex-start.png",
-        imagen4: "../images/Stretch.png",
+        pregunta: "especificación de lenguaje de programación publicada por ECMA International.",
+        imagen1: "../images/Java.png",
+        imagen2: "../images/Atom.png",
+        correcta: "../images/ES6.png",
+        imagen4: "../images/Ilustrator.png",
       },
     ],
   ];
@@ -114,7 +114,7 @@ if (randomIndex === 0) {
     "click",
     (comprobarRespuesta = () => {
       if (respuesta == 1) {
-        Swal.fire({text:'Correcto',
+        Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("opcionesJS-Correcta", 1); 
         window.location.reload()})
@@ -176,7 +176,7 @@ if (randomIndex === 0) {
   comprobar.addEventListener("click", comprobarRespuesta = () =>{    
     const arregloPrueba = ["4", "3", "2", "1", "0"];
     if (arreglo2.length==arregloPrueba.length && arreglo2.every((v,i) => v === arregloPrueba[i])) {
-      Swal.fire({text:'Correcto',
+      Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("organizarJS-Correcta", 1);
           window.location.reload()})
@@ -230,7 +230,7 @@ if (randomIndex === 0) {
     "click",
     (comprobarRespuesta = () => {
       if (respuesta == 2) {
-        Swal.fire({text:'Correcto',
+        Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("imagenJS-Correcta", 1); 
         window.location.reload()})

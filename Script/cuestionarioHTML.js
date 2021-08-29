@@ -114,7 +114,7 @@ if (randomIndex === 0) {
     "click",
     (comprobarRespuesta = () => {
       if (respuesta == 1) {
-        Swal.fire({text:'Correcto',
+        Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("opcionesHTML-Correcta", 1); 
         window.location.reload()})
@@ -176,7 +176,7 @@ if (randomIndex === 0) {
   comprobar.addEventListener("click", comprobarRespuesta = () =>{    
     const arregloPrueba = ["4", "3", "2", "1", "0"];
     if (arreglo2.length==arregloPrueba.length && arreglo2.every((v,i) => v === arregloPrueba[i])) {
-      Swal.fire({text:'Correcto',
+      Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("organizarHTML-Correcta", 1);
           window.location.reload()})
@@ -230,7 +230,7 @@ if (randomIndex === 0) {
     "click",
     (comprobarRespuesta = () => {
       if (respuesta == 2) {
-        Swal.fire({text:'Correcto',
+        Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("imagenHTML-Correcta", 1); 
         window.location.reload()})

@@ -39,9 +39,9 @@ let preguntasCSS = [
       {
         pregunta: "Cuál de los siguientes es un framework de CSS?",
         imagen1: "../images/ReactJS.png",
-        imagen2: "../images/VB.png",
+        imagen2: "../images/VB.svg",
         correcta: "../images/Foundation.png",
-        imagen4: "../images/C#.png",
+        imagen4: "../images/CSharp.png",
       },
       {
         pregunta: "Propiedad place-content: 'flex-start'",
@@ -114,7 +114,7 @@ if (randomIndex === 0) {
     "click",
     (comprobarRespuesta = () => {
       if (respuesta == 1) {
-        Swal.fire({text:'Correcto',
+        Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("opcionesCSS-Correcta", 1); 
         window.location.reload()})
@@ -176,7 +176,7 @@ if (randomIndex === 0) {
   comprobar.addEventListener("click", comprobarRespuesta = () =>{    
     const arregloPrueba = ["4", "3", "2", "1", "0"];
     if (arreglo2.length==arregloPrueba.length && arreglo2.every((v,i) => v === arregloPrueba[i])) {
-      Swal.fire({text:'Correcto',
+      Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("organizarCSS-Correcta", 1);
           window.location.reload()})
@@ -230,7 +230,7 @@ if (randomIndex === 0) {
     "click",
     (comprobarRespuesta = () => {
       if (respuesta == 2) {
-        Swal.fire({text:'Correcto',
+        Swal.fire({text:'¡Buen Trabajo!',
         icon:'success'
         }).then(() => {localStorage.setItem("imagenCSS-Correcta", 1); 
         window.location.reload()})
