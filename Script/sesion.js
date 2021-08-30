@@ -15,7 +15,7 @@ const getData = async (url) => {
     getData("http://localhost:4000/usuario")  
 });
 
-
+document.querySelector("a").addEventListener("click", ()=> localStorage.clear());
 
 
 
